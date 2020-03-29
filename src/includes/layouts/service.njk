@@ -7,7 +7,7 @@
         <div class="row">
 
         {% for post in collections.service %}
-        <div class="col-lg-4 col-md-6 single-service-2">
+            <div class="col-lg-4 col-md-6 single-service-2">
                 <div class="inner">
                     <div class="title">
                         <div class="icon">
@@ -18,66 +18,12 @@
                     <div class="content">
                         <p>{{ post.data.description }}.</p>
                         <a href="{{post.url }}">Liser plus</a>
-                    
                     </div>
                 </div>
             </div>
         {% endfor %}
-
-
-
-
-        
-
-            <div class="col-lg-4 col-md-6 single-service-2">
-                <div class="inner">
-                    <div class="title">
-                        <div class="icon">
-                            <i class="fa fa-film"></i>
-                        </div>
-                        <h4>Video Making {{ service }}</h4>
-                    </div>
-                    <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 single-service-2">
-                <div class="inner">
-                    <div class="title">
-                        <div class="icon">
-                            <i class="fa fa-camera"></i>
-                        </div>
-                        <h4>Photography</h4>
-                    </div>
-                    <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 single-service-2">
-                <div class="inner">
-                    <div class="title">
-                        <div class="icon">
-                            <i class="fa fa-music"></i>
-                        </div>
-                        <h4>Music Composing</h4>
-                    </div>
-                    <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-        
-
 
 {% endblock postContent %}

@@ -1,0 +1,34 @@
+{% extends "layouts/simple.njk" %}
+
+{% block postContent %}
+<div class="service -area  sp">
+    <div class="container">
+        <div class="row">
+
+            <div class="testimonial-slider bordered">
+
+                {% for post in collections.testi %}
+                    <div class="single-slide">
+                        <div class="inner">
+                            <p> {{ post.data.libelle }}</p>
+                            <div class="client-info">
+                                <div class="client-img">
+                                    <img src="assets/img/client.jpg" alt="client">
+                                </div>
+                                <div class="client-data">
+                                    <h4>"{{ post.data.nom }}"</h4>
+                                    <span>"{{ post.data.profession }}"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock postContent %}
+
+

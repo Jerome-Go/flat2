@@ -1,68 +1,39 @@
----
-layout: "base.njk"
-titre: "Accueil"
-description: "Agence de com"
----
+{% extends "base.njk" %}
+
+{% block pageHeader %}
+{% endblock pageHeader %}
+
+
+{% block content %}
+
+<div class="hero-slider">
+
+                {% for exemple in banniere %}
+
             <div class="single-slide" style="background-image: url(assets/img/slide1.jpg)">
                 <div class="inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="slide-content">
-                                    <h2>Nous somme une agence de com.</h2>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                    <h2> {{ exemple.ligneDuHaut }}</h2>
+                                    <p>{{ exemple.presentation }}</p>
                                     <div class="slide-btn">
-                                        <a href="#" class="button">Learn More</a>
-                                        <a href="#" class="button-2">Live Preview</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-slide" style="background-image: url(assets/img/slide2.jpg)">
-                <div class="inner">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6 text-center">
-                                <div class="slide-content">
-                                    <h2>We Are Digital Product Design Agency.</h2>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <div class="slide-btn">
-                                        <a href="#" class="button">Learn More</a>
-                                        <a href="#" class="button-2">Live Preview</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-slide" style="background-image: url(assets/img/slide3.jpg)">
-                <div class="inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="slide-content">
-                                    <h2>We Are Digital Product Design Agency.</h2>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <div class="slide-btn">
-                                        <a href="#" class="button">Learn More</a>
-                                        <a href="#" class="button-2">Live Preview</a>
+                                        <a href="{{ exemple.link.url" class="button">{{ exemple.link.</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 text-center">
-                                <div class="inner embed-responsive embed-responsive-16by9" data-margin="25px 0 0">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GYtUAYYDPo0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
+                                <div class="inner embed-respon"
                         </div>
                     </div>
                 </div>
             </div>
-        </div>        <div class="service-area spt">
+
+                {% endfor %}
+
+</div>        
+<div class="service-area spt">
     <div class="container">
         <div class="section-title" data-margin="0 0 40px">
             <h2>Our Service</h2>
@@ -337,3 +308,8 @@ description: "Agence de com"
 
     </div>
 </div>       
+
+
+{% endblock content %}
+
+
