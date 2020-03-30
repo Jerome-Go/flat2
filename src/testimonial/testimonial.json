@@ -1,3 +1,4 @@
 {
-    "layout": "layouts/simple.njk"
+    "layout": "layouts/simple.njk",
+    "tags": "testi"
 }

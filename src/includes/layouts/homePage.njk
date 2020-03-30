@@ -1,15 +1,24 @@
 {% extends "base.njk" %}
 
+
+
+{# --------------1. Début TITRE #}
 {% block pageHeader %}
 {% endblock pageHeader %}
+{# --------------1. Fin TITRE #}
 
 
+
+{# --------------2.0 Début Nommé un block Content #}
 {% block content %}
 
+
+
+
+{# --------------2.1. Début tete de page #}
 <div class="hero-slider">
 
-            {% for exemple in banniere %}
-
+        {% for exemple in banniere %}
             <div class="single-slide" style="background-image: url(assets/img/slide1.jpg)">
                 <div class="inner">
                     <div class="container">
@@ -27,204 +36,126 @@
                     </div>
                 </div>
             </div>
+        {% endfor %}
 
-            {% endfor %}
+</div> 
+{# --------------2.1 Fin tete de page #}
 
-</div>        
+
+
+{# --------------2.2 Début block ABOUT #}
+<div class="about-area sp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-content">
+                    <h3>{{ About.titre }}</h3>
+                    <p>{{ About.description }} </p>
+                    <a href="{{ About.link.url }}" class="button">{{ About.link.texte }}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about-img">
+                    <img src="{{ About.image }}" alt="{{ About. titre }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+{# --------------2.2 Fin block ABOUT #}
+
+
+
+{# --------------2.3 Début block SERVICE #}
 <div class="service-area spt">
     <div class="container">
         <div class="section-title" data-margin="0 0 40px">
-            <h2>Our Service</h2>
-            <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+            <h2>{{ service.titre }}</h2>
+            <p>{{ service.description }}</p>
         </div>
         <div class="row">
+
+        {% for post in collections.service %}
             <div class="col-md-4 single-service-2">
                 <div class="inner">
                     <div class="title">
                         <div class="icon">
-                            <i class="fa fa-film"></i>
+                            <i class="fa fa-{{ post.data.faIcon }}"></i>
                         </div>
-                        <h4>Video Making</h4>
+                        <h4>{{ post.data.titre }}</h4>
                     </div>
                     <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+                        <p>{{ post.data.description }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 single-service-2">
-                <div class="inner">
-                    <div class="title">
-                        <div class="icon">
-                            <i class="fa fa-camera"></i>
-                        </div>
-                        <h4>Photography</h4>
-                    </div>
-                    <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 single-service-2">
-                <div class="inner">
-                    <div class="title">
-                        <div class="icon">
-                            <i class="fa fa-music"></i>
-                        </div>
-                        <h4>Music Composing</h4>
-                    </div>
-                    <div class="content">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    </div>
-                </div>
-            </div>
+        {% endfor %}
+
         </div>
     </div>
-</div>        <div class="portfolio-area sp">
+</div>   
+{# --------------2.3 Fin block SERVICE #}
+            
+
+
+{# --------------2.4 Début 4 PHOTOS sur une ligne #}
+<div class="spb">
+    <div class="brand-area">
+        <div class="container">
+            <div class="row">
+
+            {% for annonce in collections.annonce %}
+                <div class="col-md-3 col-6 single-brand">
+                    <div class="inner">
+                        <a href="{{ annonce.data.url }}">
+                            <img src="{{ annonce.data.image }}" alt="{{ annonce.data.titre }}">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+                
+            </div>
+        </div>
+    </div>        
+</div>
+{# --------------2.4 Fin 4 PHOTOS sur une ligne #}
+
+
+
+{# --------------2.5 Début AVIS CLIENTS #}
+<div class="testimonial-area sp spb">
     <div class="container">
         <div class="section-title">
-            <h2>Latest Work</h2>
-            <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+            <h2>{{ avisClient.titre }}</h2>
+            <p>{{ avisClient.description }}</p>
         </div>
-        <div class="row">
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio1.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
+        <div class="testimonial-slider bordered">
+
+            {% for post in collections.testi %}
+                <div class="single-slide">
+                    <div class="inner">
+                        <p> {{ post.data.libelle }}</p>
+                        <div class="client-info">
+                            <div class="client-img">
+                                <img src="assets/img/client.jpg" alt="client">
+                            </div>
+                            <div class="client-data">
+                                <h4>"{{ post.data.nom }}"</h4>
+                                <span>"{{ post.data.profession }}"</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
                 </div>
-            </div>
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio2.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio3.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio4.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio5.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="single-portfolio col-md-4">
-                <div class="inner">
-                    <div class="portfolio-img">
-                        <img src="assets/img/portfolio6.jpg" alt="portfolio-image">
-                        <div class="hover-content">
-                            <div>
-                                <a href="#" class="button">View Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <a href="#"><h3>The Back Chiropractor</h3></a>
-                        <span>Ceramics, Design</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center" data-margin="40px 0 0">
-                <a href="#" class="button">More Works</a>
-            </div>
+            {% endfor %}
         </div>
     </div>
-</div>        <div class="spb">
-            <div class="brand-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="assets/img/brand1.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="assets/img/brand2.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="assets/img/brand3.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="assets/img/brand4.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>        </div>
-        <div class="tabs-area spb">
+</div>
+{# --------------2.5 Fin AVIS CLIENTS #}
+
+
+
+{# --------------2.6 Début Mission, Vision, Funding... #}
+<div class="tabs-area spb">
     <div class="container">
         <ul class="nav tabs-nav" id="pills-tab" role="tablist">
             <li class="nav-item">
@@ -305,9 +236,12 @@
         </div>
 
     </div>
-</div>       
+</div> 
+{# --------------2.6 Fin Mission, Vision, Funding... #}
 
 
+
+{# --------------2.0 Fin Nommé un block Content #}
 {% endblock content %}
 
 
