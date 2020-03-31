@@ -44,9 +44,9 @@
                     <div class="col-6 col-sm-9 nav-column clearfix">
                         <div class="right-nav">
                             <div class="header-social">
-                                <a href="#" class="fa fa-facebook"></a>
-                                <a href="#" class="fa fa-twitter"></a>
-                                <a href="#" class="fa fa-github"></a>
+
+                        {{ settings.societe }}
+
                             </div>
                         </div>
                         <nav id="menu" class="d-none d-lg-block">
@@ -96,11 +96,15 @@
 
 
 
-{# ------------7. Début FOOTER #}
+{# ------------7.0 Début PRES-FOOTER #}
         <footer>
+
+{# --          7.2 Début PRES-FOOTER #}
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
+
+{# --          7.2.1 Début ABOUT prés-footer #}
                         <div class="col-md-6 col-lg-3 footer_widget">
                             <div class="inner">
                                 <h4>About</h4>
@@ -108,6 +112,9 @@
                                 <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, antesenectus et netus et malesuada fames ac turpis egestas.</p>
                             </div>
                         </div>
+{# --          7.2.1 Fin ABOUT prés-footer #}
+
+{# --          7.2.2 Début COMPAGNIE prés-footer #}
                         <div class="col-md-6 col-lg-3 footer_widget">
                             <div class="inner">
                                 <h4>Company</h4>
@@ -122,6 +129,9 @@
                                 </ul>
                             </div>
                         </div>
+{# --          7.2.2 FIN COMPAGNIE prés-footer #}
+
+{# --          7.2.3 Début RECENT POST prés-footer #}
                         <div class="col-md-6 col-lg-3 footer_widget">
                             <div class="inner">
                                 <h4>Recent Posts</h4>
@@ -160,11 +170,14 @@
                                 </div>
                             </div>
                         </div>
+{# --          7.2.3 Fin RECENT POST prés-footer #}
+
+{# --          7.2.4 Début ADRESSE prés-footer #}
                         <div class="col-md-6 col-lg-3 footer_widget">
                             <div class="inner">
                                 <h4>Address</h4>
-                                <h5>Flat Pro, Inc.</h5>
-                                <p>649 Folsom Ave, Suite 400 <br>San Francisco, CA 63105 <br>P: (123) 456-7890</p>
+                                <h5>{{ settings.societe }}</h5>
+                                <p>{{ settings.adresse }} <br>{{ settings.ville }} <br>P: {{ settings.telephone }}</p>
                                 <h4>Newsletter</h4>
                                 <form action="#" class="nw_form">
                                     <input placeholder="Enter your email" type="email">
@@ -172,9 +185,14 @@
                                 </form>
                             </div>
                         </div>
+{# --          7.2.4 Fin ADRESSE prés-footer #}
+
                     </div>
                 </div>
             </div>
+{# --          7.2 Fin PRES-FOOTER #}
+
+
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
@@ -196,7 +214,7 @@
                 </div>
             </div>
         </footer>
-{# ------------7. Fin FOOTER #}
+{# ------------7.0 Fin FOOTER #}
 
 
        
