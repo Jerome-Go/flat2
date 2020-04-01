@@ -45,7 +45,9 @@
                         <div class="right-nav">
                             <div class="header-social">
 
-                        {{ settings.societe }}
+                            {% for init in init.reseau %}
+                            <a href="{{ init.url }}" class="fa fa-{{ init.nom }}"></a>
+                            {% endfor%}
 
                             </div>
                         </div>
@@ -176,8 +178,8 @@
                         <div class="col-md-6 col-lg-3 footer_widget">
                             <div class="inner">
                                 <h4>Address</h4>
-                                <h5>{{ settings.societe }}</h5>
-                                <p>{{ settings.adresse }} <br>{{ settings.ville }} <br>P: {{ settings.telephone }}</p>
+                                <h5>{{ init.societe }}</h5>
+                                <p>{{ init.adresse }} <br>{{ init.ville }} <br>P: {{ init.telephone }}</p>
                                 <h4>Newsletter</h4>
                                 <form action="#" class="nw_form">
                                     <input placeholder="Enter your email" type="email">

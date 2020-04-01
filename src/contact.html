@@ -15,25 +15,24 @@ backgroundImage: "/assets/img/page-title.jpg"
 <!--            2.1 Début Coordonnée de droite  -->
             <div class="col-md-5 contact-info">
                 <div class="single-info">
-                <h4>{{ settings.societe }}</h4>
+                <h4>{{ init.societe }}</h4><br>
                     <h5>Téléphone</h5>
-                    <p>{{ settings.telephone }}</p>
+                    <p>{{ init.telephone }}</p>
                 </div>
                 <div class="single-info">
                     <h5>Email</h5>
-                    <p>{{ settings.Email }}</p>
+                    <p>{{ init.Email }}</p>
                 </div>
                 <div class="single-info">
                     <h5>Adresse</h5>
-                    <p>{{ settings.adresse }}</p>
+                    <p>{{ init.adresse }}</p>
                 </div>
                 <div class="single-info">
                     <h5>Social</h5>
 
-                    {% for init in settings.sociale %}
-                        {{ init }}
+                    {% for init in init.reseau %}
+                    <a href="{{ init.url }}" class="fa fa-{{ init.nom }}"></a>
                     {% endfor%}
-                    
                 </div>
             </div>
 <!--            2.1 Fin Coordonnée de droit  -->

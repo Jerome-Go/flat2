@@ -6,7 +6,7 @@ imageDeFond: "assets/img/page-title.jpg"
 ---
 
 
-## USA’s most trusted 2D and graphic designing studio, a very passionate team inside.
+## USA’s most trusted 4D and graphic designing studio, a very passionate team inside.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
 

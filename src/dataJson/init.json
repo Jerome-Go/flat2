@@ -1,0 +1,26 @@
+{
+    "activite": "destruction documents confidentiels",
+    "societe": "DéDOC SA",
+    "telephone": "058 911 04 40",
+    "Email": "info@dedoc.ch",
+    "adresse": "Route de Tabary 1",
+    "ville": "1904 Vernayaz",
+    "reseau": [
+        {
+            "nom": "facebook",
+            "url": "https://facebook.com"
+        },
+        {
+            "nom": "twitter",
+            "url": "https://twittwe.com"
+        },
+        {
+            "nom": "linkedin",
+            "url": "https://linkedin.com"
+        },
+        {
+            "nom": "pinterest",
+            "url": "https://pinterest.com"
+        }
+    ]
+}
